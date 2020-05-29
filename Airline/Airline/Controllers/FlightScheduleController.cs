@@ -20,6 +20,10 @@ namespace Airline.Controllers
             this.flightScheduleService = flightScheduleService;
         }
 
+        /// <summary>
+        /// Get all
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FlightScheduleService>>> GetAll()
         {
@@ -32,7 +36,11 @@ namespace Airline.Controllers
 
             return Ok(flightScheduleDto);
         }
-
+        /// <summary>
+        /// Get by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [Route("{Id}")]
         [HttpGet]
         public async Task<ActionResult<FlightScheduleDTO>> GetFlightScheduleAsync(int Id)
@@ -46,6 +54,11 @@ namespace Airline.Controllers
 
             return Ok(flightScheduleDto);
         }
+        /// <summary>
+        /// Create flightSchedule
+        /// </summary>
+        /// <param name="flightScheduleDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<FlightScheduleDTO>> Add([FromBody]FlightScheduleDTO flightScheduleDto)
         {
@@ -58,6 +71,11 @@ namespace Airline.Controllers
 
             return Ok(flightScheduleDto);
         }
+        /// <summary>
+        /// Delete by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete("{Id}")]
         public async Task<ActionResult<FlightScheduleDTO>> Delete(int Id)
         {
@@ -71,6 +89,12 @@ namespace Airline.Controllers
             await flightScheduleService.DeleteFlightScheduleAsync(flightScheduleDto);
             return NoContent();
         }
+        /// <summary>
+        /// Update by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="flightScheduleDto"></param>
+        /// <returns></returns>
         [HttpPut("{Id}")]
         public async Task<ActionResult<FlightScheduleDTO>> Update(int Id, [FromBody]FlightScheduleDTO flightScheduleDto)
         {

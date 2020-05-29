@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Airline</name>
+    </assembly>
+    <members>
+        <member name="M:Airline.Controllers.FlightController.GetAll">
+            <summary>
+            Get all
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightController.GetFlightAsync(System.Int32)">
+            <summary>
+            Get by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightController.Add(Airline.BLL.DTOs.FlightDTO)">
+            <summary>
+            Create flight
+            </summary>
+            <param name="flightDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightController.Delete(System.Int32)">
+            <summary>
+            Delete by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightController.Update(System.Int32,Airline.BLL.DTOs.FlightDTO)">
+            <summary>
+            Update by Id
+            </summary>
+            <param name="Id"></param>
+            <param name="flightDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightScheduleController.GetAll">
+            <summary>
+            Get all
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightScheduleController.GetFlightScheduleAsync(System.Int32)">
+            <summary>
+            Get by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightScheduleController.Add(Airline.BLL.DTOs.FlightScheduleDTO)">
+            <summary>
+            Create flightSchedule
+            </summary>
+            <param name="flightScheduleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightScheduleController.Delete(System.Int32)">
+            <summary>
+            Delete by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.FlightScheduleController.Update(System.Int32,Airline.BLL.DTOs.FlightScheduleDTO)">
+            <summary>
+            Update by Id
+            </summary>
+            <param name="Id"></param>
+            <param name="flightScheduleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.PassengerController.GetAll">
+            <summary>
+            Get all
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.PassengerController.GetPassengerAsync(System.Int32)">
+            <summary>
+            Get by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.PassengerController.Add(Airline.BLL.DTOs.PassengerDTO)">
+            <summary>
+            Create passenger
+            </summary>
+            <param name="passengerDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.PassengerController.Delete(System.Int32)">
+            <summary>
+            Delete by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Airline.Controllers.PassengerController.Update(System.Int32,Airline.BLL.DTOs.PassengerDTO)">
+            <summary>
+            Update by Id
+            </summary>
+            <param name="Id"></param>
+            <param name="passengerDto"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

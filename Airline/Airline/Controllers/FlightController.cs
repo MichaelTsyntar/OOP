@@ -20,7 +20,10 @@ namespace Airline.Controllers
         {
             this.flightService = flightService;
         }
-
+        /// <summary>
+        /// Get all
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FlightService>>> GetAll()
         {
@@ -33,7 +36,11 @@ namespace Airline.Controllers
 
             return Ok(flightDto);
         }
-
+        /// <summary>
+        /// Get by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [Route("{Id}")]
         [HttpGet]
         public async Task<ActionResult<FlightDTO>> GetFlightAsync(int Id)
@@ -47,6 +54,11 @@ namespace Airline.Controllers
 
             return Ok(flightDto);
         }
+        /// <summary>
+        /// Create flight
+        /// </summary>
+        /// <param name="flightDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<FlightDTO>> Add([FromBody]FlightDTO flightDto)
         {
@@ -59,6 +71,11 @@ namespace Airline.Controllers
 
             return Ok(flightDto);
         }
+        /// <summary>
+        /// Delete by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete("{Id}")]
         public async Task<ActionResult<FlightDTO>> Delete(int Id)
         {
@@ -72,6 +89,12 @@ namespace Airline.Controllers
             await flightService.DeleteFlightAsync(flightDto);
             return NoContent();
         }
+        /// <summary>
+        /// Update by Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="flightDto"></param>
+        /// <returns></returns>
         [HttpPut("{Id}")]
         public async Task<ActionResult<FlightDTO>> Update(int Id, [FromBody]FlightDTO flightDto)
         {

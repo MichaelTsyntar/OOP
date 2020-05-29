@@ -21,6 +21,8 @@ using AutoMapper;
 using Airline.BLL;
 using FluentValidation.AspNetCore;
 using Airline.Filters;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace Airline
 {
@@ -72,7 +74,21 @@ namespace Airline
             #endregion
 
             #endregion
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Airline API",
+                    Description = "ASP.NET Core Web API"
+                });
 
+                c.IncludeXmlComments(GetXmlCommentsPath());
+            });
+        }
+        private string GetXmlCommentsPath()
+        {
+            return string.Format(@"{0}\SwaggerTest.XML", AppDomain.CurrentDomain.BaseDirectory);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,6 +109,16 @@ namespace Airline
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Airline API V1");
+
+            });
+
         }
     }
 }
