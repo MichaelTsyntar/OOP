@@ -1,0 +1,43 @@
+﻿@page "/flight"
+
+@using AirlineUI.Models
+@using AirlineUI.Services
+
+@inject FlightService flightService
+
+ <h1>Flight</h1>
+@if (flights == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Froms</th>
+                <th>Wheres</th>
+                <th>Airlines</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in flights)
+            {
+            <tr>
+                <td>@flight.froms</td>
+                <td>@flight.wheres</td>
+                <td>@flight.airlines</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+   IEnumerable<FlightViewModel> flights;
+
+    protected override async Task OnInitializedAsync()
+    {
+      flights=await flightService.GetAllFlightAsync();
+    }
+}

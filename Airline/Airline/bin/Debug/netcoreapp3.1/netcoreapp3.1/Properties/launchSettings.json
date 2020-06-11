@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "MediaPlayer.WEBAPI": {
+    "Airline": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/passenger",

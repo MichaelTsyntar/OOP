@@ -1,0 +1,41 @@
+﻿@page "/passenger"
+
+@using AirlineUI.Models
+@using AirlineUI.Services
+
+@inject PassengerService passengerService
+
+<h1>Passenger</h1>
+@if (passengers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var passenger in passengers)
+            {
+            <tr>
+                <td>@passenger.name</td>
+                <td>@passenger.lastName</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+   IEnumerable<PassengerViewModel> passengers;
+
+    protected override async Task OnInitializedAsync()
+    {
+       passengers=await passengerService.GetAllPassengerAsync();
+    }
+}

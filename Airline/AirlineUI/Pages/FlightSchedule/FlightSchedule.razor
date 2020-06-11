@@ -1,0 +1,42 @@
+﻿@page "/flightSchedule"
+
+@using AirlineUI.Models
+@using AirlineUI.Services
+
+@inject FlightScheduleService flightScheduleService
+
+ <h1>FlightSchedule</h1>
+@if (flightSchedules == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DepartureDate</th>
+                <th>DepartureTime</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flightSchedule in flightSchedules)
+            {
+                <tr>
+                    <td>@flightSchedule.departureDate</td>
+                    <td>@flightSchedule.departureTime</td>             
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    IEnumerable<FlightScheduleViewModel> flightSchedules;
+
+    protected override async Task OnInitializedAsync()
+    {
+        flightSchedules = await flightScheduleService.GetAllFlightScheduleAsync();
+    }
+}

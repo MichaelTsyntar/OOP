@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<h1>Wizzair</h1>
+
+
+<button>By ticket now</button>
+<br />
+<br />
+<label>Name</label>
+<input @bind="CurrentValue" />
+
+@code {
+    private string CurrentValue { get; set; }
+}
+<br />
+<br />
+<label>LastName</label>
+<input @bind="CurrentValue1" />
+
+@code {
+    private string CurrentValue1 { get; set; }
+}
