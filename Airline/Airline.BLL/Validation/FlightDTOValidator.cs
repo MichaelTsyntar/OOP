@@ -11,14 +11,14 @@ namespace Airline.BLL.Validation
         public FlightDTOValidator()
         {
             RuleFor(e => e.Froms)
-                .NotEmpty().WithMessage("The Name cannot be empty")
-                .MaximumLength(50).WithMessage("The Name cannot be longer than 50 characters");
+                .NotEmpty().WithMessage("The Froms cannot be empty")
+                .MaximumLength(20).WithMessage("The Froms cannot be longer than 20 characters");
             RuleFor(e => e.Wheres)
-                .NotEmpty().WithMessage("The Name cannot be empty")
-                .MaximumLength(50).WithMessage("The Name cannot be longer than 50 characters");
+                .NotEmpty().WithMessage("The Wheres cannot be empty")
+                .MaximumLength(20).WithMessage("The Wheres cannot be longer than 20 characters");
             RuleFor(e => e.Airlines)
-               .NotEmpty().WithMessage("The Name cannot be empty")
-               .MaximumLength(50).WithMessage("The Name cannot be longer than 50 characters");
+               .NotEmpty().WithMessage("The Airlines cannot be empty")
+               .MaximumLength(20).WithMessage("The Airlines cannot be longer than 20 characters");
         }
     }
 }

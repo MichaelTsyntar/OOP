@@ -13,10 +13,10 @@ namespace Airline.BLL.Validation
         {
             RuleFor(e => e.Name)
                 .NotEmpty().WithMessage("The Name cannot be empty")
-                .MaximumLength(50).WithMessage("The Name cannot be longer than 50 characters");
+                .MaximumLength(20).WithMessage("The Name cannot be longer than 20 characters");
             RuleFor(e => e.LastName)
-                .NotEmpty().WithMessage("The Name cannot be empty")
-                .MaximumLength(50).WithMessage("The Name cannot be longer than 50 characters");
+                .NotEmpty().WithMessage("The LastName cannot be empty")
+                .MaximumLength(20).WithMessage("The LastName cannot be longer than 20 characters");
         }
     }
 

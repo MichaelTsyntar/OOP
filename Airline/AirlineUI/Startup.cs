@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AirlineUI.Services;
+using FluentValidation;
+using AirlineUI.Validation;
 
 namespace AirlineUI
 {
@@ -38,8 +40,8 @@ namespace AirlineUI
             });
             services.AddRazorPages();
             services.AddServerSideBlazor();
-           
-           
+
+            services.AddValidatorsFromAssemblyContaining<PassengerViewModelValidator>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,22 +1,58 @@
 ﻿@page "/"
-
+@using Services
+@using Models
+@inject PassengerService passengerService
+@inject NavigationManager navigationManager
 <h1>Wizzair</h1>
 
+@*<a href="/passenger">Passengers</a>
+<br />
+<br />*@
+<EditForm Model="@passenger" OnValidSubmit="@Insert">
+    <FluentValidator></FluentValidator>
+    <ValidationSummary />
+    <label>Name</label>
+    <input @bind-value="passenger.name" />
 
-<button>By ticket now</button>
+    <br />
+    <br />
+    <label>LastName</label>
+    <input @bind-value="passenger.lastName" />
+
+    <br />
+    <br />
+
+    <button type="submit">By ticket now</button>
+    <br />
+    <br />
+    @Error
+</EditForm>
+
+
+@*<button @onclick="Insert">By ticket now</button>
 <br />
 <br />
 <label>Name</label>
-<input @bind="CurrentValue" />
-
-@code {
-    private string CurrentValue { get; set; }
-}
+<input @bind="passenger.name" />
 <br />
 <br />
 <label>LastName</label>
-<input @bind="CurrentValue1" />
+<input @bind="passenger.lastName" />
+<br />
+<br />*@
 
 @code {
-    private string CurrentValue1 { get; set; }
+    private string Error="";
+    private PassengerViewModel passenger = new PassengerViewModel();
+  
+    public async Task Insert()
+    {
+       
+        var result = await passengerService.AddPassengerAsync(passenger);
+        if (result.IsSuccessStatusCode)
+            navigationManager.NavigateTo("/passenger");
+        //passenger = new PassengerViewModel();
+        else
+            Error = result.StatusCode.ToString();
+    }
 }
