@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Airline.DAL.Migrations
 {
-    public partial class name : Migration
+    public partial class first_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -215,7 +215,7 @@ namespace Airline.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3676a2df-f619-4fb3-ac7d-55e01f175b4e", 0, "c626651d-602d-41f2-9864-493daf304aac", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "misa@gmail.com", false, "Michael", "TSyntar", false, null, null, null, null, null, false, "2b8eaea9-5472-4068-952c-2c7314c43be8", false, "Misa" });
+                values: new object[] { "4e668b11-5769-42a0-918c-729bf02c3234", 0, "6fb13fd5-8674-420f-a708-97b714910730", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "misa@gmail.com", false, "Michael", "TSyntar", false, null, null, null, null, null, false, "f0b23ca0-98b2-4c55-b5c1-ca5bdbd8e786", false, "Misa" });
 
             migrationBuilder.InsertData(
                 table: "Flight_schedule",

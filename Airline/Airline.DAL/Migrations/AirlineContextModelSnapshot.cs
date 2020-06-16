@@ -212,9 +212,9 @@ namespace Airline.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3676a2df-f619-4fb3-ac7d-55e01f175b4e",
+                            Id = "4e668b11-5769-42a0-918c-729bf02c3234",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c626651d-602d-41f2-9864-493daf304aac",
+                            ConcurrencyStamp = "6fb13fd5-8674-420f-a708-97b714910730",
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "misa@gmail.com",
                             EmailConfirmed = false,
@@ -222,7 +222,7 @@ namespace Airline.DAL.Migrations
                             LastName = "TSyntar",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2b8eaea9-5472-4068-952c-2c7314c43be8",
+                            SecurityStamp = "f0b23ca0-98b2-4c55-b5c1-ca5bdbd8e786",
                             TwoFactorEnabled = false,
                             UserName = "Misa"
                         });
